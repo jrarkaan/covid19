@@ -1,4 +1,6 @@
 import React from 'react';
+// importing files
+import { Cards, Chart, CountryPicker } from './components';
 
 const App = ()=>{
   return (
