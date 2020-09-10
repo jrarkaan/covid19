@@ -1,11 +1,15 @@
 import React from 'react';
 // importing files
 import { Cards, Chart, CountryPicker } from './components';
+// importing file css
+import styles from './App.module.css';
 
 const App = ()=>{
   return (
-    <div>
-      <h1>App</h1>
+    <div className={styles.container}>
+      <Cards />
+      <CountryPicker />
+      <Chart />
     </div>
   );
 }
