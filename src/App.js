@@ -1,17 +1,24 @@
 import React from 'react';
 // importing files
 import { Cards, Chart, CountryPicker } from './components';
+import { fetchData } from './api/index';
 // importing file css
 import styles from './App.module.css';
 
-const App = ()=>{
-  return (
-    <div className={styles.container}>
-      <Cards />
-      <CountryPicker />
-      <Chart />
-    </div>
-  );
+class App extends React.Component {
+  async componentDidMount(){
+    const data = await fetchData();
+    console.log(data);
+  }
+  render(){
+    return (
+      <div className={styles.container}>
+        <Cards />
+        <CountryPicker />
+        <Chart />
+      </div>
+    );
+  }
 }
 
 export default App;
