@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 // importing files
 import { Cards, Chart, CountryPicker } from './components';
 import { fetchData } from './api/index';
@@ -11,7 +11,7 @@ class App extends React.Component {
   }
   async componentDidMount(){
     const fetchedData = await fetchData();
-    this.setState({ data: fetchedData})
+    this.setState({ data: fetchedData});
   }
   render(){
     const { data } = this.state;

@@ -3,7 +3,7 @@ import { Card, CardContent, Typography, Grid } from '@material-ui/core';
 // importing style
 import styles from './Card.module.css';
 
-const Cards = ({ confirmed, recovered, deaths, lastUpdate })=>{
+const Cards = ({ data })=>{
   return(
     <div className={styles.container}>
       <Grid container spacing={3} justify="center">
