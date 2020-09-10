@@ -39,8 +39,15 @@ const Cards = ({ data: {confirmed, recovered, deaths, lastUpdate} })=>{
         </Grid>
         <Grid item component={Card}>
           <Typography color="textSecondary" gutterBottom>Deaths</Typography>
-          <Typography variant="h5">REAL DATA</Typography>
-          <Typography color="textSecondary">REAL DATE</Typography>
+          <Typography variant="h5">
+          <CountUp
+            start={0}
+            end={deaths.value}
+            duration={3.0}
+            separator=","
+          />
+          </Typography>
+          <Typography color="textSecondary">{new Date(lastUpdate).toDateString()}</Typography>
           <Typography variant="body2">Number of deaths caused by COVID-19</Typography>
         </Grid>
       </Grid>
