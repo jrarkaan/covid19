@@ -8,7 +8,21 @@ import styles from './App.module.css';
 class App extends React.Component {
   state = {
     data: {},
+    country: '',
   }
+
+  handleCountryChange = async(country)=>{
+    console.log(country);
+    // fetch the data
+    const fetchedData = await fetchData(country);
+    console.log(fetchedData);
+    // set the state
+    this.setState({
+      data: fetchedData,
+      country: country
+    });
+  }
+
   async componentDidMount(){
     const fetchedData = await fetchData();
     this.setState({ data: fetchedData});
@@ -18,7 +32,7 @@ class App extends React.Component {
     return (
       <div className={styles.container}>
         <Cards data={data} />
-        <CountryPicker />
+        <CountryPicker handleCountryChange={this.handleCountryChange} />
         <Chart />
       </div>
     );
